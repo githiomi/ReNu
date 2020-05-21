@@ -46,14 +46,14 @@
         app:layout_constraintVertical_bias="0.89" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvAppName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:clickable="false"
         android:fontFamily="monospace"
-        android:text="TextView"
+        android:text="RE-NU"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/background_light"
@@ -62,8 +62,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnProceed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="RE-NU" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvAppInfo"
@@ -81,7 +80,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnProceed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAppName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
