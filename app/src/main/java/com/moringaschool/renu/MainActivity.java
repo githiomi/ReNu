@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void run() {
                 dialog.dismiss();
             }
-        }, 4000);
+        }, 2000);
 
             mProceed.setOnClickListener(this);
 
