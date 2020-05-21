@@ -53,11 +53,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userUsername" />
 
-    <EditText
+    <Button
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:clickable="false"
         android:ems="10"
         android:fontFamily="@font/amaranth_italic"
         android:inputType="textPersonName"

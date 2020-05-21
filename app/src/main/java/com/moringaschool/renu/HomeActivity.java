@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -21,10 +22,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        ButterKnife.bind(this);
+
         Intent intent = getIntent();
-        String username = intent.getStringExtra("Username");
+        String user = intent.getStringExtra("username");
 
 
-        mOrderUsername.setText("Welcome " + username + "!");
+        mOrderUsername.setText("Welcome " + user + " !");
     }
 }

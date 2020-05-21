@@ -2,15 +2,14 @@ package com.moringaschool.renu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.net.PasswordAuthentication;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,14 +38,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mLogin.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View v){
+        if (v == mLogin){
+            String enteredUsername = mUsername.getText().toString();
+            String enteredPassword = mPassword.getText().toString();
+
+            validate(enteredUsername, enteredPassword);
+        }
+    }
+
     public void validate(String theUsername, String thePassword) {
 
         String password = "12345";
 
-        if (thePassword.equals(password)) {
+        if (thePassword.equals(password)){
 
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-            intent.putExtra("Username", theUsername);
+            intent.putExtra("username", theUsername);
             startActivity(intent);
 
         }else {
@@ -55,19 +64,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             mTimesRemaining.setText(mCounter + " More Tries");
 
             if (mCounter == 0){
+
                 mTimesRemaining.setText("No More Tries");
                 mLogin.setEnabled(false);
+
             }
-        }
-    }
-
-    @Override
-    public void onClick(View v){
-        if (v == mLogin){
-            String enteredUsername = mUsername.getText().toString();
-            String enteredPassword = mPassword.getText().toString();
-
-            validate(enteredUsername, enteredPassword);
         }
     }
 }
