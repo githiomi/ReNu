@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.net.PasswordAuthentication;
@@ -20,9 +21,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @BindView(R.id.btnLogin) Button mLogin;
 
-    @BindView(R.id.userUsername) TextView mUsername;
+    @BindView(R.id.userUsername) EditText mUsername;
 
-    @BindView(R.id.userPassword) PasswordAuthentication mPassword;
+    @BindView(R.id.userPassword) EditText mPassword;
 
     @BindView(R.id.timesRemaining) TextView mTimesRemaining;
 
@@ -35,14 +36,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         ButterKnife.bind(this);
 
+        mLogin.setOnClickListener(this);
     }
 
     public void validate(String theUsername, String thePassword) {
 
-        String username = "Admin";
         String password = "12345";
 
-        if (theUsername.equals(username) && thePassword.equals(password)) {
+        if (thePassword.equals(password)) {
 
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             intent.putExtra("Username", theUsername);
@@ -51,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }else {
             mCounter -= 1;
 
-            mTimesRemaining.setText(mCounter + "More Tries");
+            mTimesRemaining.setText(mCounter + " More Tries");
 
             if (mCounter == 0){
                 mTimesRemaining.setText("No More Tries");
@@ -64,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v){
         if (v == mLogin){
             String enteredUsername = mUsername.getText().toString();
-            String enteredPassword = mPassword.getPassword().toString();
+            String enteredPassword = mPassword.getText().toString();
 
             validate(enteredUsername, enteredPassword);
         }
