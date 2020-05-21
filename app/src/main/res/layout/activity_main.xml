@@ -45,6 +45,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.89" />
 
+    <!--    <TextView-->
+<!--        android:id="@+id/tvAppInfo"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="64dp"-->
+<!--        android:layout_marginTop="43dp"-->
+<!--        android:layout_marginEnd="64dp"-->
+<!--        android:layout_marginBottom="185dp"-->
+<!--        android:clickable="false"-->
+<!--        android:text="Your #1 Non-Paper Menu"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@android:color/background_light"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/btnProceed"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tvAppName"-->
+<!--        app:layout_constraintVertical_bias="0.0" />-->
+
     <TextView
         android:id="@+id/tvAppName"
         android:layout_width="0dp"
@@ -64,27 +84,18 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64" />
+        app:layout_constraintVertical_bias="0.742" />
 
-    <TextView
-        android:id="@+id/tvAppInfo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="185dp"
-        android:clickable="false"
-        android:text="Your #1 Non-Paper Menu"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnProceed"
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@color/cardview_light_background"
+        app:layout_constraintBottom_toTopOf="@+id/tvAppName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAppName"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/appicon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

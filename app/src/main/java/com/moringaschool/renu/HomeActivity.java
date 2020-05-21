@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -17,6 +18,8 @@ public class HomeActivity extends AppCompatActivity {
     @BindView(R.id.tvOrderUsername)
     TextView mOrderUsername;
 
+    @BindView(R.id.gvMeals) GridView mGridView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +30,9 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String user = intent.getStringExtra("username");
 
-
         mOrderUsername.setText("Welcome " + user + " !");
+
+        MealGridAdapter mealGridAdapter = new MealGridAdapter(this, foods, prices);
+        mGridView.setAdapter(mealGridAdapter);
     }
 }

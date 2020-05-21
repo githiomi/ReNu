@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".HomeActivity">
+    tools:context="com.moringaschool.renu.HomeActivity">
 
 
     <TextView
@@ -35,37 +35,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOrderHeader" />
 
-<!--    <androidx.gridlayout.widget.GridLayout-->
-<!--        android:id="@+id/gvMeals"-->
-<!--        android:layout_width="392dp"-->
-<!--        android:layout_height="600dp"-->
-<!--        android:layout_marginStart="8dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:layout_marginBottom="8dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        -->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tvOrderUsername">-->
-
-<!--    </androidx.gridlayout.widget.GridLayout>-->
-
     <GridView
         android:id="@+id/gvMeals"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:columnWidth="250dp"
+        android:gravity="left"
+        android:numColumns="2"
+        android:stretchMode="spacingWidthUniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:numColumns="2"
-        android:gravity="center"
-        android:stretchMode="spacingWidthUniform"
         app:layout_constraintTop_toBottomOf="@+id/tvOrderUsername">
 
     </GridView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

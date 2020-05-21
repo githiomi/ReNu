@@ -54,8 +54,9 @@ public class MealGridAdapter extends BaseAdapter {
             gridView = inflater.inflate(R.layout.activity_meal_grid, null);
 
             TextView mealName = (TextView) gridView.findViewById(R.id.tvMealName);
-            TextView mealPrice = (TextView) gridView.findViewById(R.id.tvMealPrice);
-            ImageView mealImage = (ImageView) gridView.findViewById(R.id.ivMealItem);
+
+//            TextView mealPrice = (TextView) gridView.findViewById(R.id.tvMealPrice);
+//            ImageView mealImage = (ImageView) gridView.findViewById(R.id.ivMealItem);
 
             mealName.setText(getItem(position).toString());
         }
