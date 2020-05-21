@@ -29,6 +29,7 @@
         android:drawableLeft="@drawable/ic_action_user"
         android:ems="10"
         android:hint="Username"
+        android:text="Daniel"
         android:inputType="textPersonName"
         android:textColor="@color/cardview_light_background"
         android:textColorHint="@android:color/background_light"
@@ -84,5 +85,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userPassword"
         app:layout_constraintVertical_bias="0.344" />
+
+    <TextView
+        android:id="@+id/timesRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5 More Tries"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/ptRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
