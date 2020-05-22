@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gridMealItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:background="@android:color/background_light"
+    android:padding="5dp"
+    android:textAlignment="center"
+    app:layout_goneMarginBottom="10dp"
+    app:layout_goneMarginTop="10dp">
+
+    <ImageView
+        android:id="@+id/ivMealItem"
+        android:layout_width="92dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/tvMealName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/amaranth_italic"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvMealPrice"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="20dp"-->
+    <!--        android:fontFamily="@font/amaranth_italic"-->
+    <!--        android:textAlignment="center"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/ivMealItem"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tvMealName" />-->
+
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@android:color/black"
+        android:drawableLeft="@drawable/ic_action_addtocart"
+        android:elevation="50dp"
+        android:clickable="true"
+        android:padding="10dp"
+        android:text="Place Order"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintTop_toBottomOf="@+id/ivMealItem" />
+
+</RelativeLayout>
