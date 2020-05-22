@@ -35,13 +35,6 @@ public class HomeMenuAdapter extends BaseAdapter {
         this.orders = gridViewClassList;
         this.ordersFiltered = gridViewClassList;
         this.mTypeFace = typeface;
-//        for (int i = 0; i < mFoods.length; i += 1){
-//            String foodName = mFoods[i];
-//            int foodPrice = mPrices[i];
-//
-//            Order newOrder = new Order(foodName, foodPrice);
-//            orders.add(newOrder);
-//        }
     }
 
     @Override
