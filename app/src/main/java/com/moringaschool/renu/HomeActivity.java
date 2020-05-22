@@ -1,6 +1,8 @@
 package com.moringaschool.renu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -67,7 +69,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
             if (v == mCheckout){
-//                startActivity(new Intent(HomeActivity.this, CheckoutActivity.class));
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                CheckoutDialogFragment checkoutDialogFragment = new CheckoutDialogFragment();
+                checkoutDialogFragment.show(fragmentManager, "To checkout");
 
             }
     }
