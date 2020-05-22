@@ -25,13 +25,16 @@
         android:id="@+id/tvOrderUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/amaranth_italic"
         android:padding="5dp"
         android:textColor="@color/cardview_light_background"
         android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/gvMeals"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.019"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOrderHeader" />
 
@@ -50,10 +53,30 @@
         android:verticalSpacing="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvOrderUsername">
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderUsername"
+        app:layout_constraintVertical_bias="0.0">
 
     </GridView>
+
+    <Button
+        android:id="@+id/btnCheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/amaranth_italic"
+        android:text="Checkout"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/gvMeals"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.972"
+        app:layout_constraintStart_toEndOf="@+id/tvOrderUsername"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderHeader"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
