@@ -53,7 +53,6 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         @BindView(R.id.restaurantImageView) ImageView mRestaurantImageView;
         @BindView(R.id.restaurantNameTextView) TextView mNameTextView;
         @BindView(R.id.categoryTextView) TextView mCategoryTextView;
-        @BindView(R.id.ratingTextView) TextView mRatingTextView;
 
         private Context mContext;
 
@@ -71,7 +70,6 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
 
             mNameTextView.setText(restaurant.getName());
             mCategoryTextView.setText(restaurant.getCategories().get(0).getTitle());
-            mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
             if (mRestaurantImageView == null) {
                 mRestaurantImageView.setImageResource(R.drawable.gradient);
             } else{
