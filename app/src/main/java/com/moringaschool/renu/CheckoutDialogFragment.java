@@ -27,9 +27,10 @@ public class CheckoutDialogFragment extends DialogFragment{
                     @Override
                     public void run() {
                         View main = inflater.inflate(R.layout.activity_loading_dialog, container, false);
-                        dismiss();
                     }
                 }, 1000);
+
+                dismiss();
             }
         });
 

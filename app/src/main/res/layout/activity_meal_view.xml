@@ -24,16 +24,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRestaurants"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="629dp"
         android:layout_below="@+id/tvTableWaitingOn"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:visibility="gone"
         android:layout_marginBottom="22dp"
         android:paddingVertical="5dp"
-
+        android:visibility="gone"
+        android:layout_marginHorizontal="10dp"
         android:textAlignment="center" />
 
 
