@@ -12,7 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import com.moringaschool.renu.CheckoutDialogFragment;
 import com.moringaschool.renu.R;
 import com.moringaschool.renu.adapters.RestaurantPagerAdapter;
 import com.moringaschool.renu.models.Business;
@@ -77,12 +79,15 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
 
 
         return view;
+
     }
 
     @Override
     public void onClick(View v){
         if ( v == mSaveRestaurantButton){
-//            Toast.makeText(this, "Your have added " + mRestaurant.getName() + " to cart", Toast.LENGTH_LONG).show();
+            FragmentManager fragmentManager = getChildFragmentManager();
+            CheckoutDialogFragment checkoutDialogFragment = new CheckoutDialogFragment();
+            checkoutDialogFragment.show(fragmentManager, "To checkout");
         }
 
     }
