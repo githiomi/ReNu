@@ -16,6 +16,7 @@ import com.moringaschool.renu.Network.YelpClient;
 import com.moringaschool.renu.R;
 import com.moringaschool.renu.models.Business;
 import com.moringaschool.renu.models.YelpBusinessesSearchResponse;
+import com.moringaschool.renu.adapters.RestaurantListAdapter;
 
 import java.util.List;
 
