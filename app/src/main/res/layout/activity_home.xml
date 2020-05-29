@@ -9,10 +9,10 @@
 
     <TextView
         android:id="@+id/tvOrderHeader"
+        android:layout_marginTop="50dp"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:fontFamily="@font/amaranth_italic"
-        android:text="Place Your Order"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
@@ -21,62 +21,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvOrderUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/amaranth_italic"
-        android:padding="5dp"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toTopOf="@+id/gvMeals"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.019"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvOrderHeader" />
 
-    <GridView
-        android:id="@+id/gvMeals"
+    <EditText
+        android:id="@+id/ptTableToWaitOn"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/transparent"
-        android:columnWidth="150dp"
-        android:numColumns="auto_fit"
-        android:stretchMode="spacingWidthUniform"
-        android:verticalSpacing="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="32dp"
+        android:drawableLeft="@drawable/ic_action_tabletowait"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter table number to wait on"
+        android:inputType="textPersonName"
+        android:textColor="@color/cardview_light_background"
+        android:textColorHint="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/btnOrder"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvOrderUsername"
-        app:layout_constraintVertical_bias="0.0">
-
-    </GridView>
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderHeader"
+        app:layout_constraintVertical_bias="0.604" />
 
     <Button
-        android:id="@+id/btnCheckout"
+        android:id="@+id/btnOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="3dp"
         android:background="@android:color/transparent"
-        android:fontFamily="@font/amaranth_italic"
-        android:text="Checkout"
+        android:text="Proceed To Take Order"
         android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/gvMeals"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.972"
-        app:layout_constraintStart_toEndOf="@+id/tvOrderUsername"
-        app:layout_constraintTop_toBottomOf="@+id/tvOrderHeader"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ptTableToWaitOn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

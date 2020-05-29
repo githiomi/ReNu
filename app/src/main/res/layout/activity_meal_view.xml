@@ -11,13 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="202dp"
-        android:background="@color/colorAccent"
+        android:background="@android:color/transparent"
         android:fontFamily="@font/amaranth_italic"
-        android:textColor="@color/colorPrimaryDark"
         android:padding="5sp"
-        android:textSize="15sp" />
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
+        android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRestaurants"
@@ -25,6 +28,7 @@
         android:layout_height="485dp"
         android:layout_below="@+id/tvTableWaitingOn"
         android:layout_alignParentBottom="true"
+        android:paddingVertical="5dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
         android:layout_marginBottom="22dp"

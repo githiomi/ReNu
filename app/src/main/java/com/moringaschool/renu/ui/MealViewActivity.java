@@ -21,11 +21,13 @@ import com.moringaschool.renu.adapters.RestaurantListAdapter;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MealViewActivity extends AppCompatActivity {
+
     private static final String TAG = MealViewActivity.class.getSimpleName();
 
     @BindView(R.id.tvTableWaitingOn) TextView mTableWaitingOn;
@@ -40,9 +42,12 @@ public class MealViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_view);
 
+        ButterKnife.bind(this);
+
         Intent receivedIntent = getIntent();
         String tableNumber = receivedIntent.getStringExtra("tableNumber");
-        mTableWaitingOn.setText("Place the order for table " + tableNumber + " here.");
+
+        mTableWaitingOn.setText("Place order for table " + tableNumber);
 
         String restaurants = "restaurants";
 
@@ -99,6 +104,7 @@ public class MealViewActivity extends AppCompatActivity {
 
     private void showRestaurants() {
         mRecyclerView.setVisibility(View.VISIBLE);
+        mTableWaitingOn.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {

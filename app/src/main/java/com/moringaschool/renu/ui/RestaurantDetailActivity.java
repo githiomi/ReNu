@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.moringaschool.renu.adapters.RestaurantPagerAdapter;
 import com.moringaschool.renu.models.Business;
+import com.moringaschool.renu.R;
 
 import org.parceler.Parcels;
 
@@ -14,7 +15,6 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.R;
 
 
 public class RestaurantDetailActivity extends AppCompatActivity {
