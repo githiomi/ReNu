@@ -32,6 +32,9 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    buildTypes.each {
+        it.buildConfigField 'String', 'YELP_API_KEY', YelpApiToken
+    }
 }
 
 dependencies {
@@ -55,4 +58,12 @@ dependencies {
     testImplementation "org.robolectric:robolectric:4.2"
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
+
+//    Retrofit dependency implementation
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+//    okhttp3 dependency
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'se.akerfeldt:okhttp-signpost:1.1.0'
 }
