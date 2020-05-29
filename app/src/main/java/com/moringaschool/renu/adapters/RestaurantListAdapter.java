@@ -13,13 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.renu.models.Business;
 import com.moringaschool.renu.R;
-import com.moringaschool.renu.models.Restaurant;
 import com.moringaschool.renu.ui.RestaurantDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -76,7 +74,7 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
             mCategoryTextView.setText(restaurant.getCategories().get(0).getTitle());
             mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
             if (mRestaurantImageView == null) {
-                mRestaurantImageView.setImageResource(R.drawable.background);
+                mRestaurantImageView.setImageResource(R.drawable.gradient);
             } else{
                 Picasso.get().load(restaurant.getImageUrl())
                         .resize(MAX_WIDTH, MAX_HEIGHT)
