@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "369913530303",
+    "firebase_url": "https://renu-dhosio.firebaseio.com",
+    "project_id": "renu-dhosio",
+    "storage_bucket": "renu-dhosio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369913530303:android:f71880c985c711e193430a",
+        "android_client_info": {
+          "package_name": "com.moringaschool.renu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369913530303-5bupj7f9sfrphl0k8gl2kh8c0uh1rqpq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moringaschool.renu",
+            "certificate_hash": "ae09361af0b8b081d41e5e61a150c94e75dc8ec3"
+          }
+        },
+        {
+          "client_id": "369913530303-gvq4dvrcd9npf6ddphands1vcf68njb0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5aqKVnpsrIASlFeky_kArGQN2e6hQ1ng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369913530303-gvq4dvrcd9npf6ddphands1vcf68njb0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
