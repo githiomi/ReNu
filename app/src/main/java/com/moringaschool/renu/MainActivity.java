@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.moringaschool.renu.ui.UserLogin;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity{
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-               Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+               Intent intent = new Intent(MainActivity.this, UserLogin.class);
                startActivity(intent);
             }
         }, 2500);

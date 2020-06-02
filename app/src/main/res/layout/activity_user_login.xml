@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
     tools:context=".ui.UserLogin">
 
     <ImageView
@@ -21,6 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.176"
+        android:clickable="true"
         app:srcCompat="@drawable/appicon" />
 
     <LinearLayout
@@ -49,7 +52,7 @@
             android:inputType="textEmailAddress"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
-            android:textColor="@android:color/holo_blue_light"
+            android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
             android:textSize="20sp" />
 
