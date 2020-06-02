@@ -85,7 +85,7 @@ public class UserLogin extends AppCompatActivity implements View.OnClickListener
                 FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
                 if ( firebaseUser != null){
-                    Intent loginIntent = new Intent(UserLogin.this, UserSignUp.class);
+                    Intent loginIntent = new Intent(UserLogin.this, MainActivity.class);
                     loginIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(loginIntent);
                     finish();
@@ -109,7 +109,7 @@ public class UserLogin extends AppCompatActivity implements View.OnClickListener
         }
 
         if ( view == mRegisterIfNoAccount){
-            Intent signUpIntent = new Intent(UserLogin.this, MainActivity.class);
+            Intent signUpIntent = new Intent(UserLogin.this, UserSignUp.class);
             startActivity(signUpIntent);
             finish();
         }
