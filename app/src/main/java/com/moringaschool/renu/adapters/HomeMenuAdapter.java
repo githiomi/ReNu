@@ -1,4 +1,4 @@
-package com.moringaschool.renu;
+package com.moringaschool.renu.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,10 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.moringaschool.renu.CheckoutActivity;
+import com.moringaschool.renu.GridViewClass;
+import com.moringaschool.renu.R;
 
 import org.w3c.dom.Text;
 

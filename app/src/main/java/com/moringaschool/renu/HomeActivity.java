@@ -6,16 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.moringaschool.renu.ui.MealViewActivity;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,8 +37,18 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         Intent receivedIntent = getIntent();
         String name = receivedIntent.getStringExtra("username");
 
-        mOrderUsername.setText("Welcome back " + name + "!" );
+        mOrderUsername.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                hideKeyboard(v);
+            }
+        });
 
+        if (name != null) {
+            mOrderUsername.setText("Welcome back " + name + "!");
+        }else{
+            mOrderUsername.setText("Take another order!");
+        }
         mProceedToOrder.setOnClickListener(this);
 
     }
@@ -57,4 +64,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             }
     }
+
+    public void hideKeyboard(View v){
+        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+    }
+
 }

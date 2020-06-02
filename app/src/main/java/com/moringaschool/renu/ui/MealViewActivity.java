@@ -53,7 +53,7 @@ public class MealViewActivity extends AppCompatActivity {
 
         YelpApi yelpClient = YelpClient.getClient();
 
-        Call<YelpBusinessesSearchResponse> call = yelpClient.getRestaurants("Los Angeles", restaurants);
+        Call<YelpBusinessesSearchResponse> call = yelpClient.getRestaurants("New York", restaurants);
 
         call.enqueue(new Callback<YelpBusinessesSearchResponse>() {
             @Override

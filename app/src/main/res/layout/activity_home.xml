@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
     tools:context=".HomeActivity">
 
     <TextView
@@ -24,15 +26,16 @@
 
     <EditText
         android:id="@+id/ptTableToWaitOn"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="128dp"
         android:layout_marginEnd="32dp"
         android:drawableLeft="@drawable/ic_action_tabletowait"
-        android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Enter table number to wait on"
+        android:textAlignment="center"
+        android:cursorVisible="false"
+        android:hint="Enter table number"
         android:inputType="textPersonName"
         android:textColor="@color/cardview_light_background"
         android:textColorHint="@color/colorAccent"

@@ -14,11 +14,13 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity{
 
+//    Class References
+    private static final String TAG = MainActivity.class.getSimpleName();
     Activity activity = this;
 
-    @BindView(R.id.btnProceed) Button mProceed;
+//    Binding views
     @BindView(R.id.tvAppName) TextView mAppName;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
 
@@ -29,25 +31,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ButterKnife.bind(activity);
 
+//        Runs the progressbar for a while before moving to the next intent
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mProceed.setVisibility(View.VISIBLE);
-                mAppName.setVisibility(View.VISIBLE);
-                mProgressBar.setVisibility(View.GONE);
+               Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+               startActivity(intent);
             }
-        }, 3000);
+        }, 2500);
+    }
 
-        mProceed.setOnClickListener(this);
-
-        }
-
-        @Override
-        public void onClick(View v){
-            if ( v == mProceed){
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        }
 }
