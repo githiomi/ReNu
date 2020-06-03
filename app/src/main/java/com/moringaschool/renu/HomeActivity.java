@@ -48,6 +48,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 //        Butter Knife binding
         ButterKnife.bind(this);
 
+//        On click listener fot the proceed to order button
+        mProceedToOrder.setOnClickListener(this);
+
 //        Custom method meant to hide the keyboard
         mOrderUsername.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -59,7 +62,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 //        Landing page header
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/CHICKEN Pie.ttf");
 
-        mOrderUsername.setText("Enter the table number you are waiting on!");
+        mOrderUsername.setText("Enter the table number you will be waiting on!");
         mOrderUsername.setTypeface(typeface);
 
 //        Firebase methods to obtain the users username
@@ -68,9 +71,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-                String username = firebaseUser.getDisplayName();
 
-                if ( username != null ){
+                if ( firebaseUser != null ){
+                    String username = firebaseUser.getDisplayName();
                     getSupportActionBar().setTitle(username);
                 }
                 else{
@@ -88,7 +91,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 Log.v(TAG, "Table number to wait on: " + tableNumber);
                 sentIntent.putExtra("tableNumber", tableNumber);
                 startActivity(sentIntent);
-
             }
     }
 

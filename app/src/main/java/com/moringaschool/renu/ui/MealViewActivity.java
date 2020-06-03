@@ -28,13 +28,15 @@ import retrofit2.Response;
 
 public class MealViewActivity extends AppCompatActivity {
 
+//    TAG
     private static final String TAG = MealViewActivity.class.getSimpleName();
 
-    @BindView(R.id.tvTableWaitingOn) TextView mTableWaitingOn;
+//    Binding views from the layout to the class
     @BindView(R.id.rvRestaurants) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
 
+//    Array list to hold all the restaurants
     public List<Business> mRestaurants;
 
     @Override
@@ -42,18 +44,30 @@ public class MealViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_view);
 
+//        Butter Knife binding
         ButterKnife.bind(this);
 
+//        Received data from the home activity
         Intent receivedIntent = getIntent();
         String tableNumber = receivedIntent.getStringExtra("tableNumber");
+        //  set received data to the app bar
+        getSupportActionBar().setTitle("Order For Table: " + tableNumber);
 
-        mTableWaitingOn.setText("Place order for table " + tableNumber);
+//        Method that calls the get restaurants
+        getRestaurants();
+    }
 
+//    Main method to retrieve the restaurants
+    public void getRestaurants() {
+
+        //        Local Variables
+        String location = "New York";
         String restaurants = "restaurants";
+
 
         YelpApi yelpClient = YelpClient.getClient();
 
-        Call<YelpBusinessesSearchResponse> call = yelpClient.getRestaurants("New York", restaurants);
+        Call<YelpBusinessesSearchResponse> call = yelpClient.getRestaurants(location, restaurants);
 
         call.enqueue(new Callback<YelpBusinessesSearchResponse>() {
             @Override
@@ -92,6 +106,7 @@ public class MealViewActivity extends AppCompatActivity {
         });
     }
 
+//    UI improvement methods to show loading while getting restaurants
     private void showFailureMessage() {
         mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
         mErrorTextView.setVisibility(View.VISIBLE);
@@ -104,12 +119,9 @@ public class MealViewActivity extends AppCompatActivity {
 
     private void showRestaurants() {
         mRecyclerView.setVisibility(View.VISIBLE);
-        mTableWaitingOn.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {
         mProgressBar.setVisibility(View.GONE);
     }
-
-
 }

@@ -143,9 +143,10 @@ public class UserLogin extends AppCompatActivity implements View.OnClickListener
                 if (task.isSuccessful()) {
                     String authentication = "Authentication Successful";
                     Toast.makeText(UserLogin.this, authentication, Toast.LENGTH_SHORT).show();
+                }else {
+                    String noAuthentication = "Incorrect username or password";
+                    Toast.makeText(UserLogin.this, noAuthentication, Toast.LENGTH_LONG).show();
                 }
-                String noAuthentication = "Incorrect username or password";
-                Toast.makeText(UserLogin.this, noAuthentication, Toast.LENGTH_LONG).show();
             }
         });
     }
