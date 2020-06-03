@@ -1,22 +1,18 @@
 package com.moringaschool.renu.ui;
 
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.moringaschool.renu.CheckoutDialogFragment;
+import com.moringaschool.renu.fragments.CheckoutDialogFragment;
 import com.moringaschool.renu.R;
-import com.moringaschool.renu.adapters.RestaurantPagerAdapter;
 import com.moringaschool.renu.models.Business;
 import com.moringaschool.renu.models.Category;
 import com.squareup.picasso.Picasso;
@@ -77,18 +73,15 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
         mCategoriesLabel.setText(android.text.TextUtils.join(", ", categories));
         mSaveRestaurantButton.setOnClickListener(this);
 
-
         return view;
-
     }
 
     @Override
-    public void onClick(View v){
-        if ( v == mSaveRestaurantButton){
+    public void onClick(View v) {
+        if (v == mSaveRestaurantButton) {
             FragmentManager fragmentManager = getChildFragmentManager();
             CheckoutDialogFragment checkoutDialogFragment = new CheckoutDialogFragment();
             checkoutDialogFragment.show(fragmentManager, "To checkout");
         }
-
     }
 }

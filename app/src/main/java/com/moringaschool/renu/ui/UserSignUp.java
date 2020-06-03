@@ -9,7 +9,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.moringaschool.renu.HomeActivity;
 import com.moringaschool.renu.R;
 
 import android.app.ProgressDialog;

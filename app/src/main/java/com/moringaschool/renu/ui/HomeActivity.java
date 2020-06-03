@@ -1,4 +1,4 @@
-package com.moringaschool.renu;
+package com.moringaschool.renu.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +19,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.moringaschool.renu.ui.MealViewActivity;
-import com.moringaschool.renu.ui.UserLogin;
+import com.moringaschool.renu.R;
 
 
 import butterknife.BindView;

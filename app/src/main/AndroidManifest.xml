@@ -17,30 +17,18 @@
         <activity android:name=".ui.MealViewActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.renu.HomeActivity" />
+                android:value="com.moringaschool.renu.ui.HomeActivity" />
         </activity>
         <activity
-            android:name=".CheckoutDialogFragment"
+            android:name=".fragments.CheckoutDialogFragment"
             tools:ignore="Instantiatable">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.renu.HomeActivity" />
+                android:value="com.moringaschool.renu.ui.HomeActivity" />
         </activity>
-        <activity android:name=".CheckoutActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.renu.LoginActivity" />
-        </activity>
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".ui.HomeActivity" />
         <activity
-            android:name=".LoginActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.renu.MainActivity" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/IndexPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

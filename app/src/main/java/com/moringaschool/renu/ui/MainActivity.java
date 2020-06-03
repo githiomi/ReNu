@@ -1,4 +1,4 @@
-package com.moringaschool.renu;
+package com.moringaschool.renu.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,14 +6,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
-import com.moringaschool.renu.ui.UserLogin;
+import com.moringaschool.renu.R;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity{
@@ -21,10 +16,6 @@ public class MainActivity extends AppCompatActivity{
 //    Class References
     private static final String TAG = MainActivity.class.getSimpleName();
     Activity activity = this;
-
-//    Binding views
-    @BindView(R.id.tvAppName) TextView mAppName;
-    @BindView(R.id.progressBar) ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

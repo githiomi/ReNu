@@ -7,7 +7,7 @@
     android:background="@drawable/gradient"
     android:clickable="true"
     android:focusableInTouchMode="true"
-    tools:context=".HomeActivity">
+    tools:context=".ui.HomeActivity">
 
     <TextView
         android:id="@+id/tvOrderHeader"
