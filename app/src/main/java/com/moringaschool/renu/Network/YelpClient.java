@@ -30,7 +30,6 @@ public class YelpClient {
                 public Response intercept(Chain chain) throws IOException {
                     Request newRequest  = chain.request().newBuilder()
                             .addHeader("Authorization", ApiConstants.YELP_TOKEN)
-//                            .addHeader("Authorization", "Bearer " + "b3DAtEi7MimM3NfdE4OuKromHFxMCjmyk95qKvuUlo603FZdvVheXjC1KU2FME5k1suyd2uFdkNsC6RnHad1Y4fbOjXABgr_SMrU9o0hrQ10mYE5zIKWx3_PYX_LXnYx")
                             .build();
                     return chain.proceed(newRequest);
                 }
