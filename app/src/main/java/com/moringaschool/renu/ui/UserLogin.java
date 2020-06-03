@@ -168,7 +168,9 @@ public class UserLogin extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onStop() {
         super.onStop();
-        mAuth.removeAuthStateListener(mFirebaseAuthStateListener);
+        if ( mFirebaseAuthStateListener != null ) {
+            mAuth.removeAuthStateListener(mFirebaseAuthStateListener);
+        }
     }
 
 }

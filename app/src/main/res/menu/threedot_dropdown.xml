@@ -9,7 +9,7 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/doToSettings"
+        android:id="@+id/goToSettings"
         android:title="Settings"
         android:visible="true"
         app:showAsAction="never" />
