@@ -226,7 +226,6 @@ public class UserSignUp extends AppCompatActivity implements View.OnClickListene
                             Log.d(TAG, user.getDisplayName());
                         }
                     }
-
                 });
     }
 
