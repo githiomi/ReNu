@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.moringaschool.renu.HomeActivity;
 import com.moringaschool.renu.MainActivity;
 import com.moringaschool.renu.R;
 
@@ -85,7 +86,7 @@ public class UserLogin extends AppCompatActivity implements View.OnClickListener
                 FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
                 if ( firebaseUser != null){
-                    Intent loginIntent = new Intent(UserLogin.this, MainActivity.class);
+                    Intent loginIntent = new Intent(UserLogin.this, HomeActivity.class);
                     loginIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(loginIntent);
                     finish();
