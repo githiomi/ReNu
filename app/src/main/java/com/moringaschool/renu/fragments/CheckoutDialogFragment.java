@@ -9,11 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
 
 import com.moringaschool.renu.R;
 import com.moringaschool.renu.ui.HomeActivity;
+
+import org.w3c.dom.Text;
 
 public class CheckoutDialogFragment extends DialogFragment{
 
@@ -27,11 +30,12 @@ public class CheckoutDialogFragment extends DialogFragment{
 
 //        Custom methods to initialize the progress dialogs
         createProgressDialog();
-        errorProgressDialog();
+        errorAlertVisible();
 
 //        Binding button to view
         Button mAddOrderToCart = (Button) mainView.findViewById(R.id.btnComplete);
         RadioGroup mRadioPaymentGroup = (RadioGroup) mainView.findViewById(R.id.rgPayment);
+        TextView mErrorMessage = (TextView) mainView.findViewById(R.id.paymentError);
 
 //        Over riding the on click listener
         mAddOrderToCart.setOnClickListener(new View.OnClickListener() {
@@ -54,11 +58,22 @@ public class CheckoutDialogFragment extends DialogFragment{
                             Intent goToNewOrder = new Intent(getContext(), HomeActivity.class);
                             goToNewOrder.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(goToNewOrder);
-
                         }
-                    }, 2500);
+                    }, 2000);
                 }else {
-                    errorProgressDialog();
+
+                    // To display the error message
+                    mErrorMessage.setVisibility(View.VISIBLE);
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Hide the error message
+                            mErrorMessage.setVisibility(View.GONE);
+                        }
+                    }, 1000);
+
                 }
             }
         });
@@ -72,10 +87,10 @@ public class CheckoutDialogFragment extends DialogFragment{
         mProgressDialog.setCancelable(false);
     }
 
-    public void errorProgressDialog() {
-        mProgressDialog = new ProgressDialog(getActivity());
-        mProgressDialog.setMessage("Please fill in a field ...");
-        mProgressDialog.setCancelable(true);
+//    To show when a radio item is not checked
+    public void errorAlertVisible(){
+
     }
+
 
 }
