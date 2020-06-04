@@ -36,7 +36,7 @@
         android:textAlignment="center"
         android:cursorVisible="false"
         android:hint="Enter table number"
-        android:inputType="textPersonName"
+        android:inputType="numberSigned"
         android:textColor="@color/cardview_light_background"
         android:textColorHint="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/btnOrder"

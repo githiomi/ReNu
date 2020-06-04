@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mProceedToOrder.setOnClickListener(this);
 
 //        Custom method meant to hide the keyboard
-        mOrderUsername.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        mTableToWaitOn.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 hideKeyboard(v);
@@ -60,7 +60,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
 //        Landing page header
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/CHICKEN Pie.ttf");
-
         mOrderUsername.setText("Enter the table number you will be waiting on!");
         mOrderUsername.setTypeface(typeface);
 
@@ -85,11 +84,23 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
             if (v == mProceedToOrder){
-                Intent sentIntent = new Intent(HomeActivity.this, MealViewActivity.class);
                 String tableNumber = mTableToWaitOn.getText().toString();
-                Log.v(TAG, "Table number to wait on: " + tableNumber);
-                sentIntent.putExtra("tableNumber", tableNumber);
-                startActivity(sentIntent);
+
+                if ( tableNumber.equals("") ){
+                    mTableToWaitOn.setError("Cannot be left blank!");
+                    tableNumber = "0";
+                }
+
+                int tableIndex = Integer.parseInt(tableNumber);
+
+                if ( ! (tableIndex > 0)  ) {
+                    mTableToWaitOn.setError("Enter a valid table number!");
+                }else{
+                    Intent sentIntent = new Intent(HomeActivity.this, MealViewActivity.class);
+                    Log.v(TAG, "Table number to wait on: " + tableNumber);
+                    sentIntent.putExtra("tableNumber", tableNumber);
+                    startActivity(sentIntent);
+                }
             }
     }
 
