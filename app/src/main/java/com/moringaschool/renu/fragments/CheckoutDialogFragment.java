@@ -2,6 +2,7 @@ package com.moringaschool.renu.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -55,8 +56,8 @@ public class CheckoutDialogFragment extends DialogFragment{
                             mProgressDialog.dismiss();
 
                             // Routes back to place another order
-                            Intent goToNewOrder = new Intent(getContext(), HomeActivity.class);
-                            goToNewOrder.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            String url = "https://www.safaricom.co.ke/personal/m-pesa/lipa-na-m-pesa";
+                            Intent goToNewOrder = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                             startActivity(goToNewOrder);
                         }
                     }, 2000);
