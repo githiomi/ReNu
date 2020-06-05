@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.moringaschool.renu.Network.YelpApi;
@@ -26,7 +28,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MealViewActivity extends AppCompatActivity {
+public class MealViewActivity extends AppCompatActivity implements View.OnClickListener{
 
 //    TAG
     private static final String TAG = MealViewActivity.class.getSimpleName();
@@ -35,6 +37,8 @@ public class MealViewActivity extends AppCompatActivity {
     @BindView(R.id.rvRestaurants) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
+    @BindView(R.id.btnCheckout) Button mCheckout;
+    @BindView(R.id.rlCheckout) RelativeLayout mLayout;
 
 //    Array list to hold all the restaurants
     public List<Business> mRestaurants;
@@ -52,6 +56,9 @@ public class MealViewActivity extends AppCompatActivity {
         String tableNumber = receivedIntent.getStringExtra("tableNumber");
         //  set received data to the app bar
         getSupportActionBar().setTitle("Order For Table: " + tableNumber);
+
+//        On click listeners
+        mCheckout.setOnClickListener(this);
 
 //        Method that calls the get restaurants
         getRestaurants();
@@ -119,9 +126,22 @@ public class MealViewActivity extends AppCompatActivity {
 
     private void showRestaurants() {
         mRecyclerView.setVisibility(View.VISIBLE);
+        mLayout.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {
         mProgressBar.setVisibility(View.GONE);
     }
+
+//    On click listener methods
+    @Override
+    public void onClick(View view){
+
+        if ( view == mCheckout ){
+            Intent goToCheckout = new Intent (MealViewActivity.this, CheckoutActivity.class);
+            startActivity(goToCheckout);
+        }
+    }
+
 }
+

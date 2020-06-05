@@ -25,17 +25,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRestaurants"
         android:layout_width="match_parent"
-        android:layout_height="629dp"
+        android:layout_height="600dp"
         android:layout_below="@+id/tvTableWaitingOn"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="22dp"
-        android:paddingVertical="5dp"
-        android:visibility="gone"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="20dp"
+        android:paddingVertical="5dp"
         android:textAlignment="center" />
-
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -59,5 +56,33 @@
         android:padding="10dp"
         android:textColor="@color/colorAccent"
         android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rlCheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="50dp"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@android:color/holo_green_light"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true" >
+
+            <Button
+                android:id="@+id/btnCheckout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_action_addtocart"
+                android:text="Checkout" />
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 </RelativeLayout>
