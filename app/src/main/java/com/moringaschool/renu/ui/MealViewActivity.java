@@ -55,7 +55,11 @@ public class MealViewActivity extends AppCompatActivity implements View.OnClickL
         Intent receivedIntent = getIntent();
         String tableNumber = receivedIntent.getStringExtra("tableNumber");
         //  set received data to the app bar
-        getSupportActionBar().setTitle("Order For Table: " + tableNumber);
+        if ( tableNumber == null ){
+            getSupportActionBar().setTitle("Edit order");
+        }else {
+            getSupportActionBar().setTitle("Order For Table: " + tableNumber);
+        }
 
 //        On click listeners
         mCheckout.setOnClickListener(this);

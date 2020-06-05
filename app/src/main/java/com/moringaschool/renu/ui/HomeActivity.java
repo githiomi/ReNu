@@ -110,12 +110,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 if ( ! (tableIndex > 0)  ) {
                     mTableToWaitOn.setError("Enter a valid table number!");
                 }else{
-                    Intent sentIntent = new Intent(HomeActivity.this, MealViewActivity.class);
-                    Log.v(TAG, "Table number to wait on: " + tableNumber);
-                    sentIntent.putExtra("tableNumber", tableNumber);
-                    mEditor.putString("tableNumber", tableNumber).apply();
-                    mEditor.putString("username", mUsername).apply();
-                    startActivity(sentIntent);
+                        Intent sentIntent = new Intent(HomeActivity.this, MealViewActivity.class);
+                        Log.v(TAG, "Table number to wait on: " + tableNumber);
+                        sentIntent.putExtra("tableNumber", tableNumber);
+                        mEditor.putString("tableNumber", tableNumber).apply();
+                        mEditor.putString("username", mUsername).apply();
+                        startActivity(sentIntent);
                 }
             }
     }

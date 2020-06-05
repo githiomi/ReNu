@@ -20,7 +20,7 @@
         android:text="Created By: Daniel Githiomi"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
-        android:textSize="10sp"
+        android:textSize="8sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,12 +56,11 @@
         android:id="@+id/appIcon"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:background="@color/cardview_light_background"
         app:layout_constraintBottom_toTopOf="@+id/tvAppName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/appicon" />
+        app:srcCompat="@drawable/ic_action_appicon" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -70,8 +69,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/tvCreatedBy"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appIcon" />
+        app:layout_constraintTop_toBottomOf="@+id/appIcon"
+        app:layout_constraintVertical_bias="0.66" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

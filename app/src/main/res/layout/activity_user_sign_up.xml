@@ -14,7 +14,6 @@
         android:layout_width="150dp"
         android:layout_height="146dp"
         android:adjustViewBounds="true"
-        android:background="@color/cardview_light_background"
         android:scaleType="fitStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.176"
         android:clickable="true"
-        app:srcCompat="@drawable/appicon" />
+        app:srcCompat="@drawable/ic_action_appicon" />
 
 
     <LinearLayout

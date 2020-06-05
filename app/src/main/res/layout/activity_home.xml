@@ -17,7 +17,7 @@
         android:fontFamily="@font/amaranth_italic"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
-        android:textSize="20sp"
+        android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,22 +29,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="128dp"
         android:layout_marginEnd="32dp"
+        android:cursorVisible="false"
         android:drawableLeft="@drawable/ic_action_tabletowait"
         android:ems="10"
-        android:textAlignment="center"
-        android:cursorVisible="false"
-        android:hint="Enter table number"
+        android:hint="Table number"
         android:inputType="numberSigned"
+        android:textAlignment="center"
         android:textColor="@color/cardview_light_background"
         android:textColorHint="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/btnOrder"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvOrderHeader"
-        app:layout_constraintVertical_bias="0.604" />
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderHeader" />
 
     <Button
         android:id="@+id/btnOrder"
@@ -52,11 +49,12 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:text="Proceed To Take Order"
-        android:textColor="@color/colorAccent"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ptTableToWaitOn" />
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderHeader"
+        app:layout_constraintVertical_bias="0.459" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
