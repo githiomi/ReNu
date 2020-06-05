@@ -1,7 +1,9 @@
 package com.moringaschool.renu.ui;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,11 +41,15 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
     @BindView(R.id.cuisineTextView) TextView mCategoriesLabel;
     @BindView(R.id.saveRestaurantButton) TextView mSaveRestaurantButton;
 
+//    Shared Preferences variables
+    private SharedPreferences mSharedPreferences;
+
 //    Local variables
     private Business mRestaurant;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String mUsername;
+    private String tableNumber;
 
 //    Picasso resizing dimensions
     private static final int MAX_WIDTH = 400;
@@ -75,6 +81,10 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
                 mUsername = firebaseUser.getDisplayName();
             }
         };
+
+//        Shared preferences getting data and storing
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        tableNumber = mSharedPreferences.getString("tableNumber", null);
     }
 
     @Override
@@ -106,6 +116,7 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
             DatabaseReference databaseReference = FirebaseDatabase.getInstance()
                     .getReference(ApiConstants.FIREBASE_CHILD_RESTAURANTS)
                     .child(mUsername)
+                    .child(tableNumber)
                     .child(mRestaurant.name);
 
             databaseReference.setValue(mRestaurant);

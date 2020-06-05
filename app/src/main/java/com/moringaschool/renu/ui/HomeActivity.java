@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,6 +37,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 //    For logs
     private static final String TAG = HomeActivity.class.getSimpleName();
 
+//    Shared Preferences variables
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
 //    Firebase authentication variable to get username
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
@@ -57,6 +63,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 hideKeyboard(v);
             }
         });
+
+//        Shared preferences initialization
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
 
 //        Landing page header
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/HelloDarling.ttf");
@@ -83,6 +93,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
             if (v == mProceedToOrder){
                 String tableNumber = mTableToWaitOn.getText().toString();
 
@@ -99,6 +110,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     Intent sentIntent = new Intent(HomeActivity.this, MealViewActivity.class);
                     Log.v(TAG, "Table number to wait on: " + tableNumber);
                     sentIntent.putExtra("tableNumber", tableNumber);
+                    mEditor.putString("tableNumber", tableNumber).apply();
                     startActivity(sentIntent);
                 }
             }
