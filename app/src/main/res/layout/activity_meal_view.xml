@@ -25,7 +25,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRestaurants"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="620dp"
         android:layout_below="@+id/tvTableWaitingOn"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -59,27 +59,28 @@
 
     <RelativeLayout
         android:id="@+id/rlCheckout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="50dp"
         android:visibility="gone">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="10dp"
+            app:cardCornerRadius="20dp"
             app:cardBackgroundColor="@android:color/holo_green_light"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true" >
+            android:layout_alignParentBottom="true" >
 
             <Button
                 android:id="@+id/btnCheckout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:textSize="15sp"
+                android:textSize="12sp"
+                android:paddingLeft="160dp"
+                android:textAlignment="center"
                 android:background="@android:color/transparent"
-                android:drawableLeft="@drawable/ic_action_addtocart"
+                android:drawableLeft="@drawable/ic_action_smallcart"
                 android:text="Checkout" />
 
         </androidx.cardview.widget.CardView>
