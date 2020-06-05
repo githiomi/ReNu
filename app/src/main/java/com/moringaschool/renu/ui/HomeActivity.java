@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 //        Landing page header
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/CHICKEN Pie.ttf");
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/HelloDarling.ttf");
         mOrderUsername.setText("Enter the table number you will be waiting on!");
         mOrderUsername.setTypeface(typeface);
 
