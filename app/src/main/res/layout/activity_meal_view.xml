@@ -62,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="50dp"
-        android:visibility="gone">
+>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -73,14 +73,13 @@
 
             <Button
                 android:id="@+id/btnCheckout"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
-                android:paddingLeft="160dp"
                 android:textAlignment="center"
                 android:background="@android:color/transparent"
-                android:drawableLeft="@drawable/ic_action_smallcart"
+                android:drawableRight="@drawable/ic_action_smallcart"
                 android:text="Checkout" />
 
         </androidx.cardview.widget.CardView>

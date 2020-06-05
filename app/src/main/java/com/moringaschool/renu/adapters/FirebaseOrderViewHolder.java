@@ -2,12 +2,15 @@ package com.moringaschool.renu.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +28,7 @@ import java.util.ArrayList;
 
 public class FirebaseOrderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+//    Local variables
     View mView;
     Context mContext;
 
@@ -38,18 +42,18 @@ public class FirebaseOrderViewHolder extends RecyclerView.ViewHolder implements 
     public void bindRestaurant(Restaurant restaurant) {
         ImageView restaurantImageView = (ImageView) mView.findViewById(R.id.restaurantImageView);
         TextView nameTextView = (TextView) mView.findViewById(R.id.restaurantNameTextView);
-        TextView categoryTextView = (TextView) mView.findViewById(R.id.categoryTextView);
 
+//        Setting values to view
         Picasso.get().load(restaurant.getImageUrl()).into(restaurantImageView);
-
         nameTextView.setText(restaurant.getName());
-        categoryTextView.setText(restaurant.getCategories().get(0));
     }
 
     @Override
     public void onClick(View view) {
+
         final ArrayList<Restaurant> restaurants = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(ApiConstants.FIREBASE_CHILD_RESTAURANTS);
+        DatabaseReference ref = FirebaseDatabase.getInstance()
+                .getReference(ApiConstants.FIREBASE_CHILD_RESTAURANTS);
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
@@ -72,4 +76,5 @@ public class FirebaseOrderViewHolder extends RecyclerView.ViewHolder implements 
             }
         });
     }
+
 }

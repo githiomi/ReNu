@@ -116,7 +116,7 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
             DatabaseReference databaseReference = FirebaseDatabase.getInstance()
                     .getReference(ApiConstants.FIREBASE_CHILD_RESTAURANTS)
                     .child(mUsername)
-                    .child(tableNumber)
+                    .child("Table Number: " + tableNumber)
                     .child(mRestaurant.name);
 
             databaseReference.setValue(mRestaurant);
