@@ -13,6 +13,7 @@ public class Restaurant {
     private double mLatitude;
     private double mLongitude;
     private ArrayList<String> mCategories = new ArrayList<>();
+    public int pushId;
 
     public Restaurant(String name, String phone, String website,
                       double rating, String imageUrl, ArrayList<String> address,
@@ -63,6 +64,14 @@ public class Restaurant {
 
     public ArrayList<String> getCategories() {
         return mCategories;
+    }
+
+    public int getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(int pushId) {
+        this.pushId = pushId;
     }
 }
 
