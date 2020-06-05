@@ -39,13 +39,11 @@ public class FirebaseOrderViewHolder extends RecyclerView.ViewHolder implements 
         ImageView restaurantImageView = (ImageView) mView.findViewById(R.id.restaurantImageView);
         TextView nameTextView = (TextView) mView.findViewById(R.id.restaurantNameTextView);
         TextView categoryTextView = (TextView) mView.findViewById(R.id.categoryTextView);
-        TextView ratingTextView = (TextView) mView.findViewById(R.id.ratingTextView);
 
         Picasso.get().load(restaurant.getImageUrl()).into(restaurantImageView);
 
         nameTextView.setText(restaurant.getName());
         categoryTextView.setText(restaurant.getCategories().get(0));
-        ratingTextView.setText("Rating: " + restaurant.getRating() + "/5");
     }
 
     @Override
