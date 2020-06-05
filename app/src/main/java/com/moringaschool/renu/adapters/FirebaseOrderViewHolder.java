@@ -42,10 +42,11 @@ public class FirebaseOrderViewHolder extends RecyclerView.ViewHolder implements 
     public void bindRestaurant(Restaurant restaurant) {
         ImageView restaurantImageView = (ImageView) mView.findViewById(R.id.restaurantImageView);
         TextView nameTextView = (TextView) mView.findViewById(R.id.restaurantNameTextView);
+        TextView categoriesTextView = (TextView) mView.findViewById(R.id.categoryTextView);
 
 //        Setting values to view
-        Picasso.get().load(restaurant.getImageUrl()).into(restaurantImageView);
-        nameTextView.setText(restaurant.getName());
+//        Picasso.get().load(restaurant.getImageUrl()).into(restaurantImageView);
+//        nameTextView.setText(restaurant.getName());
     }
 
     @Override

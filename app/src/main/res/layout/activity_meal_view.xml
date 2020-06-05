@@ -108,7 +108,7 @@
                 android:textAlignment="center"
                 android:background="@android:color/transparent"
                 android:drawableRight="@drawable/ic_action_pay"
-                android:text="Checkout" />
+                android:text="Complete Order" />
 
         </androidx.cardview.widget.CardView>
     </RelativeLayout>

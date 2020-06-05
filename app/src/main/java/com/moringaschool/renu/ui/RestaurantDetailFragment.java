@@ -124,12 +124,6 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
         }
     }
 
-
-//            FragmentManager fragmentManager = getChildFragmentManager();
-//            CheckoutDialogFragment checkoutDialogFragment = new CheckoutDialogFragment();
-//            checkoutDialogFragment.show(fragmentManager, "To checkout");
-
-
 //    Overriding the cycle classes
     @Override
     public void onStart(){

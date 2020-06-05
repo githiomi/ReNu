@@ -29,6 +29,9 @@ import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
+//    Local variables
+    private String mUsername;
+
 //    View Binding
     @BindView(R.id.tvOrderHeader) TextView mOrderUsername;
     @BindView(R.id.ptTableToWaitOn) EditText mTableToWaitOn;
@@ -81,8 +84,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
                 if ( firebaseUser != null ){
-                    String username = firebaseUser.getDisplayName();
-                    getSupportActionBar().setTitle(username);
+                    mUsername = firebaseUser.getDisplayName();
+                    getSupportActionBar().setTitle(mUsername);
                 }
                 else{
                     getSupportActionBar().setTitle("Welcome");
@@ -111,6 +114,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     Log.v(TAG, "Table number to wait on: " + tableNumber);
                     sentIntent.putExtra("tableNumber", tableNumber);
                     mEditor.putString("tableNumber", tableNumber).apply();
+                    mEditor.putString("username", mUsername).apply();
                     startActivity(sentIntent);
                 }
             }
