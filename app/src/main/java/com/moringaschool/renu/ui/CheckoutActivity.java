@@ -29,6 +29,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
 //    Binding views using Butter knife
     @BindView(R.id.rlCheckout) RelativeLayout mCheckout;
+    @BindView(R.id.rlPay) RelativeLayout mPay;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
 
 //    Local variables
@@ -47,6 +48,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
 //        Making the checkout button invisible
         mCheckout.setVisibility(View.INVISIBLE);
+        mPay.setVisibility(View.VISIBLE);
 
         mRestaurantReference = FirebaseDatabase.getInstance().getReference(ApiConstants.FIREBASE_CHILD_RESTAURANTS);
         setUpFirebaseAdapter();

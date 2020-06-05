@@ -62,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="50dp"
->
+        android:visibility="gone" >
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -80,6 +80,34 @@
                 android:textAlignment="center"
                 android:background="@android:color/transparent"
                 android:drawableRight="@drawable/ic_action_smallcart"
+                android:text="Checkout" />
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="50dp"
+        android:visibility="gone" >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@android:color/holo_green_light"
+            android:layout_alignParentBottom="true" >
+
+            <Button
+                android:id="@+id/btnPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@android:color/transparent"
+                android:drawableRight="@drawable/ic_action_pay"
                 android:text="Checkout" />
 
         </androidx.cardview.widget.CardView>

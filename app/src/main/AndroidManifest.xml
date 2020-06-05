@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.CheckoutActivity"></activity>
+        <activity android:name=".ui.CheckoutActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.renu.ui.MealViewActivity" />
+        </activity>
         <activity android:name=".ui.UserSignUp" />
         <activity android:name=".ui.UserLogin" />
         <activity android:name=".ui.MealViewActivity">
