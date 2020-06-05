@@ -7,12 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.moringaschool.renu.fragments.CheckoutDialogFragment;
 import com.moringaschool.renu.R;
+import com.moringaschool.renu.models.ApiConstants;
 import com.moringaschool.renu.models.Business;
 import com.moringaschool.renu.models.Category;
 import com.squareup.picasso.Picasso;
@@ -26,13 +33,19 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RestaurantDetailFragment extends Fragment implements View.OnClickListener{
+//    Binding views using Butter knife
     @BindView(R.id.restaurantImageView) ImageView mImageLabel;
     @BindView(R.id.restaurantNameTextView) TextView mNameLabel;
     @BindView(R.id.cuisineTextView) TextView mCategoriesLabel;
     @BindView(R.id.saveRestaurantButton) TextView mSaveRestaurantButton;
 
+//    Local variables
     private Business mRestaurant;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private String mUsername;
 
+//    Picasso resizing dimensions
     private static final int MAX_WIDTH = 400;
     private static final int MAX_HEIGHT = 300;
 
@@ -52,6 +65,16 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mRestaurant = Parcels.unwrap(getArguments().getParcelable("restaurant"));
+
+//        Instantiating firebase
+        mAuth = FirebaseAuth.getInstance();
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                mUsername = firebaseUser.getDisplayName();
+            }
+        };
     }
 
     @Override
@@ -79,9 +102,35 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
     @Override
     public void onClick(View v) {
         if (v == mSaveRestaurantButton) {
-            FragmentManager fragmentManager = getChildFragmentManager();
-            CheckoutDialogFragment checkoutDialogFragment = new CheckoutDialogFragment();
-            checkoutDialogFragment.show(fragmentManager, "To checkout");
+
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+                    .getReference(ApiConstants.FIREBASE_CHILD_RESTAURANTS)
+                    .child(mUsername)
+                    .child(mRestaurant.name);
+
+            databaseReference.setValue(mRestaurant);
+            Toast.makeText(getContext(), "Saved " + mRestaurant.getName() + " to database!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+//            FragmentManager fragmentManager = getChildFragmentManager();
+//            CheckoutDialogFragment checkoutDialogFragment = new CheckoutDialogFragment();
+//            checkoutDialogFragment.show(fragmentManager, "To checkout");
+
+
+//    Overriding the cycle classes
+    @Override
+    public void onStart(){
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthStateListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if ( mAuth != null ){
+            mAuth.removeAuthStateListener(mAuthStateListener);
         }
     }
 }
