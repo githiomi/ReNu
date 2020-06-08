@@ -172,9 +172,9 @@ public class CheckoutActivity extends AppCompatActivity implements View.OnClickL
 
 //    Custom method to calculate total payable
     private void showTotal() {
-        int total = 0;
+        int total;
 
-        int itemCost = 200;
+        int itemCost = 120;
         total = ( itemCost * mRestaurants.size() );
         mErrorOrAmount.setText("Total amount payable: Ksh." + total);
     }
