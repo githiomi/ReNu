@@ -90,9 +90,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="50dp"
-        android:visibility="gone" >
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvErrorOrAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="3dp"
+            android:layout_above="@id/cvComplete"
+            android:textColor="@android:color/white" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvComplete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
@@ -104,13 +114,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textAlignment="center"
                 android:background="@android:color/transparent"
                 android:drawableRight="@drawable/ic_action_pay"
                 android:text="Complete Order" />
 
         </androidx.cardview.widget.CardView>
+
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivErrorLogo"
+        android:layout_width="140dp"
+        android:layout_height="102dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/ic_action_error" />
 
 </RelativeLayout>

@@ -29,8 +29,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import org.parceler.Parcels;
 
@@ -47,6 +49,8 @@ public class CheckoutActivity extends AppCompatActivity implements View.OnClickL
     @BindView(R.id.rlPay) RelativeLayout mPay;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
     @BindView(R.id.btnPay) Button mBtnPay;
+    @BindView(R.id.tvErrorOrAmount) TextView mErrorOrAmount;
+    @BindView(R.id.ivErrorLogo) ImageView mErrorImage;
 
 //    Local variables
     private DatabaseReference mRestaurantReference;
@@ -114,14 +118,24 @@ public class CheckoutActivity extends AppCompatActivity implements View.OnClickL
                     mRestaurants.add(snapshot.getValue(Business.class));
                 }
 
-                mAdapter = new RestaurantListAdapter(CheckoutActivity.this, mRestaurants);
-                mRecyclerView.setAdapter(mAdapter);
-                RecyclerView.LayoutManager layoutManager =
-                        new LinearLayoutManager(CheckoutActivity.this);
-                mRecyclerView.setLayoutManager(layoutManager);
-                mRecyclerView.setHasFixedSize(true);
+                if ( mRestaurants.size() > 0 ) {
 
-                hideProgressBar();
+                    mAdapter = new RestaurantListAdapter(CheckoutActivity.this, mRestaurants);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(CheckoutActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
+
+                    hideProgressBar();
+                    showTotal();
+                }
+                else {
+
+                    hideProgressBar();
+                    showEmptyMessage();
+
+                }
 
             }
 
@@ -148,5 +162,20 @@ public class CheckoutActivity extends AppCompatActivity implements View.OnClickL
 //    Custom method to make the bar disappear
     private void hideProgressBar() {
         mProgressBar.setVisibility(View.GONE);
+    }
+
+//    Custom method in case no orders had been placed
+    private void showEmptyMessage(){
+        mErrorImage.setVisibility(View.VISIBLE);
+        mErrorOrAmount.setText("No orders have been placed for this table");
+    }
+
+//    Custom method to calculate total payable
+    private void showTotal() {
+        int total = 0;
+
+        int itemCost = 200;
+        total = ( itemCost * mRestaurants.size() );
+        mErrorOrAmount.setText("Total amount payable: Ksh." + total);
     }
 }

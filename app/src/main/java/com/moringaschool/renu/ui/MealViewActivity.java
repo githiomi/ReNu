@@ -144,6 +144,7 @@ public class MealViewActivity extends AppCompatActivity implements View.OnClickL
         if ( view == mCheckout ){
             Intent goToCheckout = new Intent (MealViewActivity.this, CheckoutActivity.class);
             startActivity(goToCheckout);
+
         }
     }
 
